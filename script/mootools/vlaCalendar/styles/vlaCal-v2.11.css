@@ -1,0 +1,71 @@
+/*************************/
+/* vlaCalendar  modif JSK*/
+/*************************/
+/* Main calendar */
+.vlaCalendarOverlay {width:auto; height:auto; font-size:1.4em; line-height:1.4em; padding:1em 5em; margin:0 0 1em; background:#f1f1f1;}
+.vlaCalendar {position:relative; display:block; width:100%; height:100%; text-align:left;}
+.vlaCalendar, .vlaCalendar table,.vlaCalendar a { font-size:1em;}
+.vlaCalendar .container { position:relative; margin:0.3em 0 0 0;}
+.vlaCalendar table { position:relative; width:100%; margin:0 auto; text-align:right; border-collapse:collapse; }
+.vlaCalendar .picker td {cursor:pointer;}
+
+/* Label & arrows */
+.vlaCalendar span.indication { position:relative; display:block; text-align:center; background:transparent; padding:0.2em 1em 0.2em 1em;}
+.vlaCalendar caption { position:relative; text-align:center; padding:0.3em 1em 0.3em 1em; }
+.vlaCalendar .label { font-size:1.3em; cursor:pointer; float:none; width:auto; text-align:center; margin:0; padding:0;}
+.vlaCalendar .label:hover { color:#838383;}
+.vlaCalendar .noHover:hover { cursor:default; }
+.vlaCalendar ul { padding:0; margin:0; text-align:left; list-style-type:none; list-style-image:none; width:auto; float:none; }
+.vlaCalendar ul li { padding:0; margin:0; overflow:hidden; list-style:none; text-align:center; }
+.vlaCalendar .arrowLeft,.vlaCalendar .arrowRight{ position:absolute; top:0; display:block; width:40px; height:40px; box-shadow:1px 1px 1px #c3c3c3;}
+.vlaCalendar .arrowLeft { left:-4em;}
+.vlaCalendar .arrowRight { right:-4em;}
+.vlaCalendar .arrowLeft a,.vlaCalendar .arrowRight a { display:block; background:#fff; height:100%; width:100%; text-decoration:none; }
+.vlaCalendar .arrowLeft a span, .vlaCalendar .arrowRight a span {position:absolute !important; top:-100em !important; left:-100em !important; width:1px !important; height:1px !important; padding:0 !important; margin:0 !important; text-indent:-1000em !important;}
+.vlaCalendar .arrowLeft a:before,.vlaCalendar .arrowRight a:before { font-family:"Consolas", monospace; content:"<"; font-size:1.5em; line-height:1.2em; text-align:center; background:transparent; width:100%; position:absolute; top:50%; -webkit-transform:translate(0,-50%); -ms-transform:translate(0,-50%);  transform:translate(0,-50%); left:0; }
+.vlaCalendar .arrowRight a:before { content:">"; }
+.vlaCalendar .arrowLeft a:active,.vlaCalendar .arrowLeft a:hover,.vlaCalendar .arrowLeft a:focus,
+.vlaCalendar .arrowRight a:active,.vlaCalendar .arrowRight a:hover ,.vlaCalendar .arrowRight a:focus {color:#fff; background:#565656; }
+
+/* Month */
+.vlaCalendar .month th {color:#565656;text-align:center;font-weight:normal; width:14.28%; padding:0.1em; border-bottom:1px solid #f5f5f5;}
+.vlaCalendar .month td {padding:0.3em; text-align:center; height:auto;}
+.vlaCalendar .month td.selected {outline:1px solid #ff6c6c; color:#838383;}
+.vlaCalendar .month td.selected:hover {outline:1px solid #ff0000;}
+.vlaCalendar .month td.outsideDay {color:#a8a8a8;}
+.vlaCalendar .month td span,.vlaCalendar .month td.activeDay span a {color:#de0101;} /* swieta */
+.vlaCalendar .month td a { font-size:1em; text-decoration:none;}
+.vlaCalendar .month td.activeDay {font-weight:bold;cursor:pointer;}
+.vlaCalendar .month td.activeDay a,.vlaCalendar .month td.activeDay span a {font-weight:bold; border:1px solid #48980d; display:block; }
+.vlaCalendar .month td.activeDay a:hover,.vlaCalendar .month td.activeDay a:focus {border:1px solid #48980d; background:#48980d; color:#fff;}
+/* chmurka */
+.vlaCalendar .month td.activeDay div {background:#ffffff;border:1px solid #dfdfdf;padding:0.5em;position:absolute;margin-top:-2px;margin-left:5px;height:auto !important;width:200px;z-index:1;
+-moz-box-shadow: 0px 0px 2px #f3f3f3; -webkit-box-shadow: 0px 0px 2px #f3f3f3; box-shadow: 0px 0px 2px #f3f3f3;
+}
+.vlaCalendar .month td.activeDay div strong { position:relative; display:block; height:1%; padding:4px; text-align:left; margin:0px; border-bottom:1px dotted #dfdfdf; overflow:visible; background:#f0f0f0; color:#4a4a4a; font-size:1em; text-decoration:none; }
+.vlaCalendar .month td.activeDay div ul { padding:0px; margin:0px; text-align:left; list-style-type:none; list-style-image:none; width:auto; }
+.vlaCalendar .month td.activeDay div ul li { padding:0.8em; margin:0px; margin-bottom:1px; overflow:hidden; list-style:none; position:relative; border-bottom:1px dotted #cecece; }
+.vlaCalendar .month td.activeDay div ul li:last-child {  border-bottom:0; }
+.vlaCalendar .month td.activeDay div ul li a:link,.vlaCalendar .month td.activeDay div ul li a:visited { font-size:0.8em; line-height:1em; border:0; background:transparent; color:#000; text-decoration:none; font-weight:normal;  }
+.vlaCalendar .month td.activeDay div ul li a:hover,.vlaCalendar .month td.activeDay div ul li a:active,.vlaCalendar .month td.activeDay div ul li a:focus { background:transparent; border:0; text-decoration:underline; color:#565656; text-decoration:none; }
+
+/* Year & decade */
+.vlaCalendar .year {margin:0.5em auto 0.1em auto; width:90% }
+.vlaCalendar .year td {width:auto;height:auto; padding:1em 0.3em 1em 0.3em; text-align:center; cursor:pointer;}
+.vlaCalendar .year td:hover { outline:1px solid #dedede; -moz-box-shadow: 0px 0px 15px #efefef inset; -webkit-box-shadow: 0px 0px 15px #efefef inset; box-shadow: 0px 0px 15px #efefef inset;}
+.vlaCalendar .year td.selected {outline:1px solid #969bff; color:#838383;}
+.vlaCalendar .year td.selected:hover {outline:1px solid #000cff;}
+.vlaCalendar .year td.current {outline:1px solid #cfe36f; color:#838383;}
+.vlaCalendar .year td.current:hover {outline:1px solid #bce400;}
+.vlaCalendar .year td.selectedcurrent {outline:1px solid #ff6c6c;}
+.vlaCalendar .year td.selectedcurrent:hover {outline:1px solid #ff0000;}
+.vlaCalendar .year td.outsideYear {color:#a8a8a8;}
+
+/* Picker - kalendarz w formularzu */
+.vlaCalendarPicker {position:absolute; z-index:999; margin:0; display:none;}
+.vlaCalendarPicker .pickerBackground { padding:0.5em; height:180px;width:180px; overflow:hidden; background:#ffffff; border:5px solid #aeaeae; -moz-box-shadow:0px 0px 15px #efefef; -webkit-box-shadow:0px 0px 15px #efefef; box-shadow:0px 0px 15px #efefef;}
+.vlaCalendarPicker .vlaCalendar,.vlaCalendarPicker .vlaCalendar table,.vlaCalendarPicker .vlaCalendar a { font-size:1em;}
+.vlaCalendarPicker .vlaCalendar .arrowLeft,.vlaCalendarPicker .vlaCalendar .arrowRight {top:0 !important; width:18px; height:18px; }
+.vlaCalendarPicker .vlaCalendar .arrowLeft { left:0em !important;}
+.vlaCalendarPicker .vlaCalendar .arrowRight { right:0em !important;}
+.vlaCalendarPicker .vlaCalendar .arrowLeft a:before, .vlaCalendarPicker .vlaCalendar .arrowRight a:before { font-size:1em; }
